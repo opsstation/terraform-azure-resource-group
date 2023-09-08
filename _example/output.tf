@@ -1,5 +1,5 @@
 output "resource_group_id" {
-  value = module.resource_group.resource_group_id
+  value       = module.resource_group.resource_group_id
   description = "The ID of the Resource Group."
 }
 
