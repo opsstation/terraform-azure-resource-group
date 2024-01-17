@@ -1,6 +1,13 @@
+## Managed By : OpsStation
+## Description : This Script is used to create Transfer Server, Transfer User And  labels.
+## Copyright @ OpsStation. All Right Reserved.
 
+#Module      : labels
+#Description : This terraform module is designed to generate consistent label names and tags
+#              for resources. You can use terraform-labels to implement a strict naming
+#              convention.
 module "labels" {
-  source      = "git::git@github.com:opsstation/terraform-azure-labels.git"
+  source      = "git::https://github.com/opsstation/terraform-azure-labels.git?ref=v1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
@@ -28,7 +35,7 @@ resource "azurerm_resource_group" "rg" {
 resource "azurerm_management_lock" "resource_group_lock" {
   count      = var.enabled && var.resource_lock_enabled ? 1 : 0
   name       = format("%s-rg-lock", var.lock_level)
-  scope      = azurerm_resource_group.rg.*.id[0]
+  scope      = azurerm_resource_group.rg[*].id[0]
   lock_level = var.lock_level
   notes      = "This Resource Group is locked by terrafrom"
 }
