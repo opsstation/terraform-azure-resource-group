@@ -28,11 +28,6 @@ variable "repository" {
   description = "Terraform current module repo"
 }
 
-variable "tags" {
-  type        = map(any)
-  default     = {}
-  description = "Additional tags (e.g. map,`XYZ`)"
-}
 
 variable "enabled" {
   type        = bool
