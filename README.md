@@ -73,7 +73,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-azure-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | opsstation/labels/multicloud | 1.0.0 |
 
 ## Resources
 
@@ -86,6 +86,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_attributes"></a> [attributes](#input\_attributes) | extra teg of service | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
 | <a name="input_create"></a> [create](#input\_create) | Used when creating the Resource Group | `string` | `"30m"` | no |
 | <a name="input_delete"></a> [delete](#input\_delete) | Used when deleting the Resource Group | `string` | `"70m"` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to control the module creation | `bool` | `true` | no |
@@ -93,7 +94,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | <a name="input_location"></a> [location](#input\_location) | Location where resource should be created | `string` | `"West Europe"` | no |
 | <a name="input_lock_level"></a> [lock\_level](#input\_lock\_level) | n/a | `string` | `"CanNotDelete"` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManageBY, eg, 'OpsStation' | `string` | `"company/opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManageBY, eg, 'OpsStation' | `string` | `"opsstation"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The Name which should be used for this Resource Group.Changing this forces a new Resource Group to be created. | `string` | `"resource-group"` | no |
 | <a name="input_read"></a> [read](#input\_read) | Used when retrieving the Resource Group | `string` | `"90m"` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-azure-resource-group"` | no |

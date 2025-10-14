@@ -12,7 +12,7 @@ variable "environment" {
 
 variable "managedby" {
   type        = string
-  default     = "company/opsstation"
+  default     = "opsstation"
   description = "ManageBY, eg, 'OpsStation'"
 }
 
@@ -72,4 +72,9 @@ variable "resource_lock_enabled" {
   type        = bool
   default     = false
   description = "enable or disable lock resource"
+}
+variable "attributes" {
+  type        = list(string)
+  default     = [""]
+  description = "extra teg of service"
 }
