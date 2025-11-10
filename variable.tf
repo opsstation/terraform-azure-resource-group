@@ -24,7 +24,7 @@ variable "label_order" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/opsstation/terraform-azure-resource-group"
+  default     = "https://github.com/opsstation/terraform-azure-resource-group.git"
   description = "Terraform current module repo"
 }
 

@@ -8,7 +8,7 @@
 #              convention.
 module "labels" {
   source      = "opsstation/labels/multicloud"
-  version     = "1.0.0"
+  version     = "1.0.1"
   name        = var.name
   environment = var.environment
   repository  = var.repository

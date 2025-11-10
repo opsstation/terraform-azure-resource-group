@@ -17,14 +17,10 @@ This Terraform module creates structured labels for Azure resources with specifi
 
 ```hcl
 module "resource_group" {
-  source = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.0"
-
-  environment = "-resource-group"
-  label_order = ["name", "environment", ]
-
-  name     = "OpsStation"
-  location = "North Europe"
-
+  source                = "git::https://github.com/opsstation/terraform-azure-resource-group.git?ref=v1.0.1"
+  name                  = "app"
+  environment           = "non-prod"
+  location              = "Canada Central"
   #resource lock
   resource_lock_enabled = true
   lock_level            = "CanNotDelete"
@@ -67,13 +63,13 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >=2.90.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.52.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | opsstation/labels/multicloud | 1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | opsstation/labels/multicloud | 1.0.1 |
 
 ## Resources
 
@@ -97,7 +93,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | ManageBY, eg, 'OpsStation' | `string` | `"opsstation"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The Name which should be used for this Resource Group.Changing this forces a new Resource Group to be created. | `string` | `"resource-group"` | no |
 | <a name="input_read"></a> [read](#input\_read) | Used when retrieving the Resource Group | `string` | `"90m"` | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-azure-resource-group"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-azure-resource-group.git"` | no |
 | <a name="input_resource_lock_enabled"></a> [resource\_lock\_enabled](#input\_resource\_lock\_enabled) | enable or disable lock resource | `bool` | `false` | no |
 | <a name="input_update"></a> [update](#input\_update) | Used when updating the Resource Group | `string` | `"50m"` | no |
 
