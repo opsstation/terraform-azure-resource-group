@@ -57,7 +57,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.13.3 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=4.52.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=4.50.0 |
 
 ## Providers
 
@@ -82,12 +82,12 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_attributes"></a> [attributes](#input\_attributes) | extra teg of service | `list(string)` | <pre>[<br>  ""<br>]</pre> | no |
+| <a name="input_attributes"></a> [attributes](#input\_attributes) | extra teg of service | `list(string)` | <pre>[<br/>  ""<br/>]</pre> | no |
 | <a name="input_create"></a> [create](#input\_create) | Used when creating the Resource Group | `string` | `"30m"` | no |
 | <a name="input_delete"></a> [delete](#input\_delete) | Used when deleting the Resource Group | `string` | `"70m"` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to control the module creation | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `"-OpsStation"` | no |
-| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
+| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br/>  "name",<br/>  "environment"<br/>]</pre> | no |
 | <a name="input_location"></a> [location](#input\_location) | Location where resource should be created | `string` | `"West Europe"` | no |
 | <a name="input_lock_level"></a> [lock\_level](#input\_lock\_level) | n/a | `string` | `"CanNotDelete"` | no |
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | ManageBY, eg, 'OpsStation' | `string` | `"opsstation"` | no |
