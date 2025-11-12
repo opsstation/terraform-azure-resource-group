@@ -8,14 +8,33 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      # Terraform install step
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+
+      # ✅ Cache pre-commit environments
+      - name: Cache pre-commit
+        uses: actions/cache@v4
         with:
-          terraform_version: 1.7.0
-      - uses: pre-commit/action@v3.0.0
+          path: |
+            ~/.cache/pre-commit
+            ~/.cache/pip
+          key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            pre-commit-${{ runner.os }}-
+
+      # ✅ Install pre-commit (only if not cached)
+      - name: Install pre-commit
+        run: |
+          python -m pip install --upgrade pip
+          pip install pre-commit
+
+      # ✅ Run pre-commit checks
+      - name: Run pre-commit hooks
+        run: pre-commit run --show-diff-on-failure --color=always --all-files
