@@ -7,12 +7,14 @@
 #              for resources. You can use terraform-labels to implement a strict naming
 #              convention.
 module "labels" {
-  source      = "git::https://github.com/opsstation/terraform-azure-labels.git?ref=v1.0.0"
+  source      = "opsstation/labels/multicloud"
+  version     = "1.0.1"
   name        = var.name
   environment = var.environment
+  repository  = var.repository
   managedby   = var.managedby
   label_order = var.label_order
-  repository  = var.repository
+  attributes  = var.attributes
 }
 
 
